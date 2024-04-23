@@ -1,1 +1,5 @@
 官网：https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/html/getting-started.html#getting-started-introducing-spring-boot
+在JUnit和JUnit.Jupiter.api中，@Test注解的导入路径不同。在JUnit 4中，@Test的导入路径是import org.junit.Test；而在JUnit Jupiter中，@Test的导入路径是import org.junit.jupiter.api.Test。这意味着在使用JUnit 4进行单元测试时，需要使用@RunWith注解来指定测试运行器，而在使用JUnit Jupiter进行单元测试时，则不需要。
+另外，JUnit 5和JUnit 4在测试引擎方面也存在较大差异。从JUnit 5开始，JUnit使用jupiter作为测试引擎。在运行时（runtime）的时候，你需要使用这个引擎来进行测试。而针对JUnit 5以下的版本，包括JUnit 4和3，JUnit使用的是vintage测试引擎。如果你的测试使用的是JUnit 4的代码进行编写的话，那么你需要JUnit 4的测试引擎。
+此外，junit-jupiter-api和junit-jupiter-engine在JUnit 5中用于书写和运行测试。因此，你需要在你的POM中定义上面2个Package。针对老的JUnit 4的项目，你需要将junit-jupiter-engine引擎替换为junit-vintage-engine引擎才能够让你的测试正式跑起来。
+总的来说，JUnit和JUnit.Jupiter.api在用法上的主要区别在于注解的导入路径、是否需要使用@RunWith注解以及测试引擎的选择和使用上。因此，在实际开发中，你需要根据项目的需求选择合适的测试框架，并根据框架的规范编写单元测试代码。

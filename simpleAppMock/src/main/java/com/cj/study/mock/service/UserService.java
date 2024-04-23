@@ -41,10 +41,12 @@ public class UserService {
         if(!open){
             return null;
         }
+        return queryOrgInfo(name);
+    }
+    public OrgInfo queryOrgInfo(String name) {
         String code = userDao.queryUserCode(name);
         return userOrgService.queryUserOrgInfo(code);
     }
-
     public void save(List<UserInfo> userInfos) {
 
         for (UserInfo userInfo : userInfos) {
@@ -52,7 +54,7 @@ public class UserService {
         }
     }
 
-    private boolean saveUserInfo(UserInfo userInfo) {
+    private boolean saveUserInfo(UserInfo userInfo, boolean a) {
         return userDao.save(userInfo);
     }
 

@@ -44,9 +44,9 @@ public class MockPrivateTest extends BaseTest {
 
     @Test
     void testPrivateMethod() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Method method = UserService.class.getDeclaredMethod("saveUserInfo", UserInfo.class);
+        Method method = UserService.class.getDeclaredMethod("saveUserInfo", UserInfo.class, boolean.class);
         method.setAccessible(true);
         when(userDao.save(any())).thenReturn(true);
-        Assertions.assertTrue((Boolean) method.invoke(userService, new UserInfo()));
+        Assertions.assertTrue((Boolean) method.invoke(userService, new UserInfo(), true));
     }
 }

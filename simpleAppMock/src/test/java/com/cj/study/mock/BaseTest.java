@@ -1,9 +1,6 @@
 package com.cj.study.mock;
 
-import com.cj.study.mock.service.UserService;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import javax.annotation.Resource;
 
 /**
  * BaseTest 简介
@@ -13,6 +10,4 @@ import javax.annotation.Resource;
  **/
 @SpringBootTest(classes = ApplicationTest.class)
 public class BaseTest {
-    @Resource
-    private UserService userService;
 }
