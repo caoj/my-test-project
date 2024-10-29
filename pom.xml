@@ -10,6 +10,7 @@
     <modules>
         <module>junit-test</module>
         <module>simpleAppMock</module>
+        <module>spring-test</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -70,6 +71,18 @@
                 <scope>test</scope>
             </dependency>
 
+            <!-- Add the transmittable-thread-local dependency -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.12.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>2.14.3</version>
+            </dependency>
 <!--            <dependency>-->
 <!--                <groupId>org.mockito</groupId>-->
 <!--                <artifactId>mockito-junit-jupiter</artifactId>-->
