@@ -15,10 +15,12 @@ import java.util.concurrent.Executor;
 @Slf4j
 class ThreadLocalServiceTest extends BaseTest {
     private Map<Integer, ThreadLocalService> threadLocalServiceMap = new HashMap<>();
+
     @Autowired
-    public void setThreadLocalServiceMap(List<ThreadLocalService> threadLocalServices){
+    public void setThreadLocalServiceMap(List<ThreadLocalService> threadLocalServices) {
         threadLocalServices.forEach(threadLocalService -> threadLocalServiceMap.put(threadLocalService.type(), threadLocalService));
     }
+
     @Autowired
     private Executor taskExecutor;
 
