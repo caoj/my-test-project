@@ -6,3 +6,5 @@
 *.iws
 *.idea
 *.log
+build
+target
